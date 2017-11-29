@@ -50,7 +50,7 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'strict' => true,
+            'strict' => ((isset($_SERVER['REQUEST_URI']) and (substr($_SERVER['REQUEST_URI'],0,strlen('/admin')) == '/admin'))) ? false : true,
             'engine' => null,
         ],
 
